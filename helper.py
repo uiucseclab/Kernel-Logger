@@ -75,7 +75,7 @@ print(strs)
 with open('/proc/proj/status',"w") as f:
     f.write("w")
 
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# s.connect((127.0.0.1,5000))
-# s.send(strs)
-# s.close()
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((127.0.0.1,5000))
+s.send(strs)
+s.close()
