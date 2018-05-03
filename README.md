@@ -39,7 +39,11 @@ This would make it run once an hour to send information over a port
 ### Examples/Features
 This program will run hourly in order to log important information such as logins to websites. Examples include:
 ```
-the quick brown fox jumped over the lazy dog facebook.com abce @ gmail.com that abc qrstuv the quick brown fox the quick brown fox Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in google.com username passWORD voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+the quick brown fox jumped over the lazy dog facebook.com abce @ gmail.com that abc qrstuv the quick brown fox the quick brown 
+fox Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+irure dolor in reprehenderit in google.com username passWORD voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 ```
 
 This would return:
@@ -66,3 +70,14 @@ This would be translated to:
 ```
 passWORD
 ```
+
+### Files included
+```
+helper.py -> The script that runs every hour
+proj.c -> the Kernel module that will log the keys
+table.html -> Keycode table translation website
+mapMaker.py -> Helper for the proj.c file that prints out the map from keycode to ascii value
+```
+### References
+https://www.gadgetweb.de/programming/39-how-to-building-your-own-kernel-space-keylogger.html
+http://www.comptechdoc.org/os/linux/howlinuxworks/linux_hlkeycodes.html
